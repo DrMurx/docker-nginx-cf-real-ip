@@ -8,7 +8,7 @@ Create `jwilder/nginx-proxy` container with `-v /some/persistent/path:/etc/nginx
 
 Then run this as follows:
 
-`docker run -d -v nginx-confd:/mnt --name cfrealip mikenowak/nginx-cf-real-ip`
+`docker run -d --volumes-from nginx-proxy --name cfrealip mikenowak/nginx-cf-real-ip`
 
 The script will fetch the list of IPs from cloudflare's website and update that every 24hrs.
 
